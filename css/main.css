@@ -27,6 +27,10 @@ img {
   position: relative;
 }
 
+.strong {
+  font-weight: 700;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 20px;
@@ -424,4 +428,110 @@ header .badges .badge img {
 .notice .notice-line .inner .inner__right a span {
   display: block;
   font-size: 36px;
+}
+
+/* REWARDS */
+
+.rewards {
+  background-color: #1e3932;
+}
+
+.rewards .inner {
+  position: relative;
+  padding: 30px 0 40px 0;
+  display: flex;
+}
+
+.rewards .inner .rewards__logo {
+  display: flex;
+  width: 260px;
+  justify-content: center;
+  align-items: center;
+}
+.rewards .inner .rewards__logo img {
+  display: block;
+  width: 176px;
+}
+
+.rewards .inner .rewards__items {
+  flex-grow: 1;
+}
+.rewards .inner .rewads__items .rewards__items__register {
+  /* position: relative; */
+  padding-bottom: 12px;
+  box-shadow: 0 0.5px #c8c8c8;
+}
+
+.rewards .inner .rewads__items .rewards__items__register p {
+  display: block;
+  font-size: 17px;
+  color: white;
+}
+.rewards .inner .rewads__items .rewards__items__register p.subject {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.rewards .inner .rewads__items .rewards__items__register .buttons {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+}
+.rewards
+  .inner
+  .rewads__items
+  .rewards__items__register
+  .buttons
+  .btn--register {
+  background-color: #00704a;
+  border-color: #00704a;
+  color: white;
+  margin-right: 6px;
+  font-weight: bold;
+}
+.rewards .inner .rewads__items .rewards__items__register .buttons .btn--login,
+.rewards .inner .rewads__items .rewards__items__card .buttons .btn--login {
+  border-color: white;
+  color: white;
+  font-weight: bold;
+}
+
+.rewards
+  .inner
+  .rewads__items
+  .rewards__items__register
+  .buttons
+  .btn--register:hover,
+.rewards
+  .inner
+  .rewads__items
+  .rewards__items__register
+  .buttons
+  .btn--login
+  :hover,
+.rewards
+  .inner
+  .rewads__items
+  .rewards__items__card
+  .buttons
+  .btn--login:hover {
+  text-decoration: underline;
+}
+
+.rewards .inner .rewads__items .rewards__items__card {
+  /* position: relative; */
+}
+
+.rewards .inner .rewads__items .rewards__items__card p {
+  font-size: 14px;
+  color: white;
+  display: block;
+  margin-top: 12px;
+}
+
+.rewards .inner .rewads__items .rewards__items__card .buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.rewards .inner .rewads__items .rewards__items__card .buttons .btn--login {
 }
