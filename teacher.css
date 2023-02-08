@@ -643,79 +643,18 @@ header .badges .badge img {
 .favorite {
   position: relative;
   height: 800px;
-  background-image: url("../images/fav_bg.png");
-  background-size: 113%;
-  background-position: center;
+  background-image: url("./images/fav_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
-.fav__text1 {
-  width: 260px;
-  height: 205px;
-  overflow: hidden;
-  position: absolute;
-  top: 130px;
-  left: 110px;
-  transform: translateX(-700px);
-  opacity: 0;
-  transition: 1.8s;
+.favorite .inner {
 }
-
-.favorite:hover .fav__text1 {
-  opacity: 1;
-  transform: translateX(0);
+.favorite .inner .favorite__text-1 {
 }
-
-.favorite:hover .fav__textimg2 {
-  opacity: 1;
-  transform: translateX(0);
+.favorite .inner .favorite__text-2 {
 }
-
-.favorite:hover .fav__btn {
-  opacity: 1;
+.favorite .inner .favorite__img {
 }
-
-.fav__text2 {
-  height: 156px;
-  width: 362px;
-  position: absolute;
-  top: 400px;
-  /* transition: 2.7s; */
-  /* transform: translateX(-700px);
-  opacity: 0;
-  transition: 2.7s; */
-}
-.fav__textimg2 {
-  transform: translateX(-700px);
-  opacity: 0;
-  transition: 2.7s;
-}
-
-.fav__pictures {
-  position: absolute;
-  right: 0;
-  top: 120px;
-  right: -320px;
-}
-
-.fav__btn {
-  position: absolute;
-  margin-top: 50px;
-  right: 0px;
-  opacity: 0;
-  transition: 3s;
-}
-
-.btn--white {
-  transition: 0.7s;
-  font-size: 15px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  color: #fff;
-}
-.btn--white:hover {
-  background-color: white;
-
-  color: black;
-  text-decoration: underline;
+.favorite .inner .btn.btn--white {
 }
