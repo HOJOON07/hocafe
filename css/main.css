@@ -869,3 +869,74 @@ header .badges .badge img {
   color: white;
   transition: 1s;
 }
+.footer {
+  padding: 30px 0;
+  background-color: #2c2a29;
+}
+.footer .inner {
+  height: 220px;
+  margin: 0 auto;
+  color: white;
+}
+
+/* FOOTER */
+footer .inner .footer__menu {
+  position: relative;
+  display: flex;
+}
+footer .inner .footer__menu .left {
+  width: 90%;
+}
+
+footer .inner .footer__menu .left a {
+  color: white;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer .inner .footer__menu .left ul li ul li {
+  font-size: 12px;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+footer .inner .footer__menu .left ul li ul li:hover {
+  text-decoration: underline;
+}
+
+footer .inner .footer__menu .right {
+  position: absolute;
+  right: 0;
+}
+
+.menu {
+  display: flex;
+}
+.menu li {
+  flex-grow: 1;
+}
+
+.firstli {
+  margin-top: 10px;
+}
+
+.footer .footer__sub-menu {
+  margin-top: 20px;
+}
+
+.footer .footer__sub-menu ul {
+  display: flex;
+  justify-content: center;
+}
+.footer .footer__sub-menu ul li {
+}
+.footer .footer__sub-menu ul li:first-child a {
+  color: green;
+}
+.footer .footer__sub-menu ul li a {
+  color: white;
+  font-size: 12px;
+  padding: 0 10px;
+  border-right: 1px solid #393939;
+}
