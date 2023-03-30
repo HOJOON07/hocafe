@@ -1,14 +1,131 @@
-// alert("되었는가?");
-
 const searchEl = document.querySelector(".search");
 const searchInputEl = searchEl.querySelector("input");
+const searchIconEl = searchEl.querySelector("span");
 
-let test = true;
-let test2 = true;
-let test3 = true;
-let test4 = true;
+let isNotSearchClick = false;
 
-console.log("변수 초기값", test, test2, test3);
+document.addEventListener("click", function (e) {
+  if (!e.target.classList.contains("material-symbols-outlined")) {
+    isNotSearchClick = true;
+  } else {
+    isNotSearchClick = false;
+  }
+});
+
+searchIconEl.addEventListener("click", function () {
+  if (!searchEl.classList.contains("active")) {
+    searchEl.classList.add("active");
+    searchInputEl.focus();
+    searchInputEl.setAttribute("placeholder", "통합검색");
+  } else if (isNotSearchClick) {
+    searchInputEl.focus();
+    searchInputEl.setAttribute("placeholder", "통합검색");
+    isNotSearchClick = false;
+  } else {
+    searchEl.classList.remove("active");
+  }
+});
+
+searchInputEl.addEventListener("blur", function () {
+  searchInputEl.setAttribute("placeholder", "");
+});
+
+//SWIPER
+//SWIPER NOTICE
+
+const swiperNotice = new Swiper(
+  ".notice .notice-line .inner .inner__left .swiper",
+  {
+    direction: "vertical",
+    loop: true,
+    autoplay: true,
+  }
+);
+
+//SWIPER PROMOTION
+
+const swiperPromotion = new Swiper(".notice .promotion .swiper", {
+  direction: "horizontal",
+  speed: 1000,
+  slidesPerView: 3,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop: true,
+  // touchRatio: 0,
+  // autoplay: {
+  //   delay: 2000,
+  //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true,
+  // },
+  pagination: {
+    el: ".promotion .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    prevEl: ".promotion .swiper-button-prev",
+    nextEl: ".promotion .swiper-button-next",
+  },
+});
+
+function controlAutoPlay() {
+  if (swiperPromotion.autoplay.running === false) {
+    swiperPromotion.autoplay.start();
+  } else {
+    swiperPromotion.autoplay.stop();
+  }
+}
+
+// Toggle
+const promotionSection = document.querySelector(".promotion");
+const promotionToggleBtn = document.querySelector(".notice .toggle-promotion");
+
+promotionToggleBtn.addEventListener("click", function () {
+  if (promotionSection.classList.contains("hide")) {
+    promotionSection.classList.remove("hide");
+    promotionToggleBtn.classList.add("show");
+  } else {
+    promotionSection.classList.add("hide");
+    promotionToggleBtn.classList.remove("show");
+  }
+});
+
+//애니메이션 파트
+// VISUAL
+window.onload = function () {
+  const visualSection = document.querySelector(".visual");
+  visualSection.classList.add("animate");
+};
+
+// 애니메이션 스크롤 파트
+// 엘살바도르
+window.addEventListener("scroll", function () {
+  // console.log(window.scrollY);
+  if (window.scrollY > 400) {
+    const elsalvador = document.querySelector(".elsalvador");
+    elsalvador.classList.add("animate");
+  }
+  if (window.scrollY > 853) {
+    const ethiopia = this.document.querySelector(".ethiopia");
+    ethiopia.classList.add("animate");
+  }
+  if (window.scrollY > 1400) {
+    const favorite = document.querySelector(".favorite");
+    favorite.classList.add("animate");
+  }
+  if (window.scrollY > 2080) {
+    const magazine = document.querySelector(".magazine");
+    magazine.classList.add("animate");
+  }
+  if (window.scrollY > 2500) {
+    const store = document.querySelector(".store");
+    store.classList.add("animate");
+  }
+});
+
+// let test = true;
+// let test2 = true;
+// let test3 = true;
+// let test4 = true;
 
 // searchEl.addEventListener("click", function () {
 //   if ((test && test2 && test3) || !test3) {
@@ -166,102 +283,6 @@ console.log("변수 초기값", test, test2, test3);
 // });
 // 처음엔 무조건 트루이고 그담 클릭에는 무조건 폴스라서 두번 눌러야 트루 값이 되고 열리는거임
 
-searchInputEl.addEventListener("focus", function () {
-  searchInputEl.setAttribute("placeholder", "통합 검색");
-});
-
-searchInputEl.addEventListener("blur", function () {
-  searchInputEl.setAttribute("placeholder", "");
-});
-
-//SWIPER
-//SWIPER NOTICE
-
-const swiperNotice = new Swiper(
-  ".notice .notice-line .inner .inner__left .swiper",
-  {
-    direction: "vertical",
-    loop: true,
-    autoplay: true,
-  }
-);
-
-//SWIPER PROMOTION
-
-const swiperPromotion = new Swiper(".notice .promotion .swiper", {
-  direction: "horizontal",
-  speed: 1000,
-  slidesPerView: 3,
-  spaceBetween: 10,
-  centeredSlides: true,
-  loop: true,
-  // touchRatio: 0,
-  // autoplay: {
-  //   delay: 2000,
-  //   disableOnInteraction: false,
-  //   pauseOnMouseEnter: true,
-  // },
-  pagination: {
-    el: ".promotion .swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    prevEl: ".promotion .swiper-button-prev",
-    nextEl: ".promotion .swiper-button-next",
-  },
-});
-
-function controlAutoPlay() {
-  if (swiperPromotion.autoplay.running === false) {
-    swiperPromotion.autoplay.start();
-  } else {
-    swiperPromotion.autoplay.stop();
-  }
-}
-
-// Toggle
-const promotionSection = document.querySelector(".promotion");
-const promotionToggleBtn = document.querySelector(".notice .toggle-promotion");
-
-promotionToggleBtn.addEventListener("click", function () {
-  if (promotionSection.classList.contains("hide")) {
-    promotionSection.classList.remove("hide");
-    promotionToggleBtn.classList.add("show");
-  } else {
-    promotionSection.classList.add("hide");
-    promotionToggleBtn.classList.remove("show");
-  }
-});
-
-//애니메이션 파트
-// VISUAL
-window.onload = function () {
-  const visualSection = document.querySelector(".visual");
-  visualSection.classList.add("animate");
-};
-
-// 애니메이션 스크롤 파트
-// 엘살바도르
-window.addEventListener("scroll", function () {
-  // console.log(window.scrollY);
-  if (window.scrollY > 400) {
-    const elsalvador = document.querySelector(".elsalvador");
-    elsalvador.classList.add("animate");
-  }
-  if (window.scrollY > 853) {
-    const ethiopia = this.document.querySelector(".ethiopia");
-    ethiopia.classList.add("animate");
-  }
-  if (window.scrollY > 1400) {
-    const favorite = document.querySelector(".favorite");
-    favorite.classList.add("animate");
-  }
-  if (window.scrollY > 2080) {
-    const magazine = document.querySelector(".magazine");
-    magazine.classList.add("animate");
-  }
-  if (window.scrollY > 2500) {
-    const store = document.querySelector(".store");
-    store.classList.add("animate");
-  }
-});
+// searchInputEl.addEventListener("focus", function () {
+//   searchInputEl.setAttribute("placeholder", "통합 검색");
+// });
